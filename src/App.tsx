@@ -16,6 +16,7 @@ import EditAdoptionListing from "./pages/EditAdoptionListing";
 import ListingDetailsPage from "./pages/ListingDetailsPage";
 
 function App() {
+
   return (
     <Routes>
       {/* Auth Routes - No Navbar/Footer */}
@@ -47,6 +48,7 @@ function App() {
       </Route>
     </Routes>
   );
+  
 }
 
 export default App;
