@@ -15,6 +15,7 @@ import PetListingDetailsPage from "./pages/PetlistingdetailsPage";
 import EditAdoptionListing from "./pages/EditAdoptionListing";
 import ListingDetailsPage from "./pages/ListingDetailsPage";
 import ModalPreview from "./pages/ModalPreview";
+import CustodyTimelinePage from "./pages/CustodyTimelinePage";
 
 function App() {
 
@@ -38,6 +39,9 @@ function App() {
         <Route path="/list-for-adoption" element={<EditAdoptionListing />} />
         <Route path="/my-listings/:id" element={<ListingDetailsPage />} />
         <Route path="/notifications" element={<NotificationPage />} />
+
+        {/* Custody Routes */}
+        <Route path="/custody/:custodyId/timeline" element={<CustodyTimelinePage />} />
 
         {/* Preview Routes */}
         <Route path="/preview-modal" element={<ModalPreview />} />

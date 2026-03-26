@@ -11,3 +11,8 @@ export {
 	type EscrowTimelineEventType,
 	type UseEscrowTimelineOptions,
 } from "./useEscrowTimeline";
+export {
+	useCustodyTimeline,
+	type CustodyTimelineEventType,
+	type UseCustodyTimelineOptions,
+} from "./useCustodyTimeline";
