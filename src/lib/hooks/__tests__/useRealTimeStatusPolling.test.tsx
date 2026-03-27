@@ -107,7 +107,7 @@ describe("useRealTimeStatusPolling", () => {
       });
 
     const { result } = renderHook(
-      () => useRealTimeStatusPolling("adoption", "adoption-1", { intervalMs: 25 }),
+      () => useRealTimeStatusPolling("adoption", "adoption-1", { intervalMs: 100 }),
       { wrapper: createWrapper(queryClient) }
     );
 

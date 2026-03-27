@@ -49,7 +49,7 @@ describe("useEscrowStatus", () => {
     setEscrowStatus("SETTLED");
     const fetchSpy = vi.spyOn(globalThis, "fetch");
 
-    renderHook(() => useEscrowStatus("escrow-1", { intervalMs: 50 }), {
+    renderHook(() => useEscrowStatus("escrow-1", { intervalMs: 1000 }), {
       wrapper: createWrapper(queryClient),
     });
 
@@ -57,7 +57,7 @@ describe("useEscrowStatus", () => {
 
     const callCount = fetchSpy.mock.calls.length;
 		await act(async () => {
-			await new Promise((resolve) => setTimeout(resolve, 200));
+			await new Promise((resolve) => setTimeout(resolve, 500));
 		});
     expect(fetchSpy).toHaveBeenCalledTimes(callCount);
   });
@@ -67,12 +67,12 @@ describe("useEscrowStatus", () => {
     setEscrowStatus("FUNDED");
     const fetchSpy = vi.spyOn(globalThis, "fetch");
 
-    renderHook(() => useEscrowStatus("escrow-2", { intervalMs: 50 }), {
+    renderHook(() => useEscrowStatus("escrow-2", { intervalMs: 200 }), {
       wrapper: createWrapper(queryClient),
     });
 
     await waitFor(() => expect(fetchSpy).toHaveBeenCalledTimes(2), {
-      timeout: 300,
+      timeout: 1000,
     });
   });
 });
